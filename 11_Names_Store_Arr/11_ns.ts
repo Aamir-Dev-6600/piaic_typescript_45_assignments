@@ -28,3 +28,5 @@ console.log('\n');
 // with map, this returns null but I'm not interested in the return value in this example
 console.log('With map method:\n');
 names.map(name => console.log(name)); 
+
+export {}; 
