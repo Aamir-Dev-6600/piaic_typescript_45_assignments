@@ -1,0 +1,12 @@
+/**
+ * T-Shirt: Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. 
+ * The function should print a sentence summarizing the size of the shirt and the message printed on it. Call the function.
+ */
+
+const make_shirt = (size: string, text: string) => {
+    console.log(`Size: ${size} should have "${text}" as print text.`);
+}
+
+make_shirt('XL', 'Bro! I have to Teach');
+
+export { };
