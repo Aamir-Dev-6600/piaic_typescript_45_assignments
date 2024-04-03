@@ -9,6 +9,6 @@ const make_shirt = (size: string = 'L', text: string = 'I love TypesScript') => 
 
 make_shirt();
 make_shirt('M');
-make_shirt('S', 'Life is Fun')
+make_shirt('S', 'Life is Fun');
 
 export { }; 
