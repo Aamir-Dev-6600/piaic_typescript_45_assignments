@@ -9,8 +9,14 @@
  * Print the Object that’s returned to make sure all the information was stored correctly.
  */
 
-
-const getCar = (manufacturer: string, model: string, ...additionals: { [key: string]: any }[]): any => {
+/**
+ * function that creates car object from two string parameters and unknown number of rest parameters
+ * @param manufacturer : string value
+ * @param model : string value
+ * @param additionals : Rest parameters, array of objects, each object has they key as string and value any
+ * @returns thisCar : contains the maufacturer, model and rest parameters 
+ */
+const getCar = (manufacturer: string, model: string, ...additionals: { [index: string]: any }[]): any => {
 
     let thisCar: { manufacturer: string, model: string } = {
         manufacturer: manufacturer,
