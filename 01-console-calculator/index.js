@@ -1,3 +1,4 @@
+#! /usr/bin/env node 
 import inquirer from "inquirer";
 let allGood = true;
 const inputs = await inquirer.prompt([
