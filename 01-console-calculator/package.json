@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple Console Based Calculator that Uses Ts, Node and Inquirer to Perform Basic +,-,*,/ operations",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "inquirer": "^9.2.18"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
   }
 }
