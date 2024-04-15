@@ -24,7 +24,7 @@ let iterations = !Number.isNaN(inputIterations.iterations)
   : maxChances;
 
 console.log(`\nYou have ${iterations} chances to make the guess. Let's have FUN!`);
-console.log("If you want to QUIT the game, type 'Q' or 'q'\n\n");
+console.log("If you want to QUIT the game, input 0 in the guess\n\n");
 
 // iterate until all the chances are exhausted
 let counter = 1;
@@ -39,8 +39,13 @@ while (counter <= iterations) {
 
   const guessed = inputGuessed.user_number;
 
-  // if guessed is NaN or outside the required range, do not wate the chance
-  if (Number.isNaN(guessed) || guessed < 1 || guessed > 100) {
+  // quit if the user wants to quit
+  if (guessed === 0){
+    console.log(`Wait! What, C'mon. You still had ${iterations - counter + 1} chances.`);
+    break; 
+  }
+  // if guessed is NaN or outside the expected range, do not wate the chance
+  else if (Number.isNaN(guessed) || guessed < 1 || guessed > 100) {
     console.log(
       `Rejected Input! Please always input a number in range 01-100 (Both Inclusive).\n`
     );
