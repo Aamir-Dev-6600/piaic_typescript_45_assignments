@@ -1,0 +1,19 @@
+{
+  "name": "aamir-console-atm",
+  "version": "1.0.0",
+  "description": "\"\"\u001b[D Console Based ATM Demonstration Module",
+  "main": "index.js",
+  "bin": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aamir Khan Maarofi",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^9.2.19"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
+  }
+}
