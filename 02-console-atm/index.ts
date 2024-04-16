@@ -7,11 +7,16 @@ const operationsList = ["Balance Inquiry", "Cash Withdrawl", "Fast Cash"];
 const fastCashOptions = ["$50", "$100", "$500", "$1000"];
 
 const helperShwoBalance = (isRemaining?: boolean): void => {
-    const message = isRemaining ? `Your Remaining Account Balance is: ${account.balance}\n\n` : `\n\n\t\t*** Your Account Balance is: ${account.balance} ***\n\n`;
+    const message = isRemaining ? `Your Remaining Account Balance is: $${account.balance}\n\n` : `\n\n\t\t*** Your Account Balance is: $${account.balance} ***\n\n`;
     console.log(message);
 }
 
 const helperWithdrawAmount = (amount: number): void => {
+    if (Number.isNaN(amount) || amount === 0) {
+        console.log(`\n\n\t\t*** Invalid Amount! Please provide a valid numebr greater than 0. *** \n\n`);
+        return;
+    }
+
     if (account.balance < amount) {
         console.log(`\n\n\t\t*** Insufficient Funds! You can't withdraw more than what you have. *** \n\n`);
         return;
@@ -84,9 +89,9 @@ const initiateTransaction = async () => {
             case operationsList[1]:
                 do {
                     inputObject = await inquirer.prompt([{ name: "amount", type: "number", message: "Please Enter The Amount: " }]);
+                    helperWithdrawAmount(inputObject.amount);
                 } while (Number.isNaN(inputObject.amount) || inputObject.amount === 0)
 
-                helperWithdrawAmount(inputObject.amount);
                 break;
 
             case operationsList[2]:
