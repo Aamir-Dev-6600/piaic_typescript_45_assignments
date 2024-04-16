@@ -1,7 +1,7 @@
 {
   "name": "aamir-cli-number-guessing-game",
   "version": "1.0.0",
-  "description": "Guess Computer generated number in user defined number of iterations",
+  "description": "Guess Computer generated number with user defined difficulty level",
   "main": "index.js",
   "bin": "index.js",
   "type": "module",
