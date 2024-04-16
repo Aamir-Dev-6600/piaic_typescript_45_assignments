@@ -98,4 +98,7 @@ const initiateTransaction = async () => {
 }
 
 
-initiateTransaction(); 
+do {
+    await initiateTransaction();
+    inputObject = await inquirer.prompt([{ name: "another_transaction", type: "list", message: "Would You Like To Make Another Transaction: ", choices: ["Yes", "No"] }]);
+} while (inputObject?.another_transaction === 'Yes'); 
