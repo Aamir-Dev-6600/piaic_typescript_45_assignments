@@ -59,3 +59,43 @@ const helperFastCashOperation = (operation: string) => {
     }
 }
 
+
+let isAuthorized: boolean = false;
+let inputObject: { [key: string]: any };
+
+const initiateTransaction = async () => {
+    // break the loop if attempts are exhausted or the user is authenticated
+    while (!isAuthorized) {
+        if (account.attempts === 0) break;
+        const inputObject = await inquirer.prompt([{ name: "pin_code", type: "number", message: "Please Enter Your 4 Digit Pin Code: " }]);
+        isAuthorized = helperLoginAuthorizer(inputObject.pin_code);
+    }
+
+    if (isAuthorized) {
+        inputObject = await inquirer.prompt([{ name: "operation", type: "list", message: "Please Select Your Desired Operation Below:", choices: operationsList }]);
+        switch (inputObject.operation) {
+            case operationsList[0]:
+                helperShwoBalance();
+                break;
+
+            case operationsList[1]:
+                do {
+                    inputObject = await inquirer.prompt([{ name: "amount", type: "number", message: "Please Enter The Amount: " }]);
+                } while (Number.isNaN(inputObject.amount) || inputObject.amount === 0)
+
+                helperWithdrawAmount(inputObject.amount);
+                break;
+
+            case operationsList[2]:
+                inputObject = await inquirer.prompt([{ name: "option", type: "list", message: "Please Select Your Desired Fast-Cash Operation: ", choices: fastCashOptions }]);
+                helperFastCashOperation(inputObject.option);
+
+                break;
+            default:
+                console.log('Invalid Operation! Process Aborted');
+        }
+    }
+}
+
+
+initiateTransaction(); 
