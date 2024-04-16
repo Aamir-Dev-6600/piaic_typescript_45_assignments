@@ -1,7 +1,7 @@
 {
   "name": "aamir-console-atm",
-  "version": "1.0.0",
-  "description": "\"\"\u001b[D Console Based ATM Demonstration Module",
+  "version": "1.0.1",
+  "description": "Console Based ATM Application - Learning Demonstration Module",
   "main": "index.js",
   "bin": "index.js",
   "type": "module",
