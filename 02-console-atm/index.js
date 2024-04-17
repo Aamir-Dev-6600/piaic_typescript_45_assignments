@@ -90,9 +90,9 @@ do {
     console.log('Please Follow the On-Screen Instructions, and Provide the Expected Inputs\n\n');
     await initiateTransaction();
     if (isAuthorized) {
-        inputObject = await inquirer.prompt([{ name: "another_transaction", type: "list", message: "Would You Like To Make Another Transaction: ", choices: ["Yes", "No"] }]);
+        inputObject = await inquirer.prompt([{ name: "make_another_trnx", type: "confirm", message: "Would You Like To Make Another Transaction: " }]);
     }
     else {
-        inputObject = { another_transaction: 'No' };
+        inputObject = { make_another_trnx: false };
     }
-} while (inputObject?.another_transaction === 'Yes');
+} while (inputObject?.make_another_trnx);
